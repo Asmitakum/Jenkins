@@ -27,6 +27,7 @@ public class GoogleSearchTest {
         WebElement searchBox = driver.findElement(By.name("q"));
         searchBox.sendKeys("Selenium WebDriver");
         searchBox.submit();
+		thread(3000);
 
         String title = driver.getTitle();
         Assert.assertTrue(title.contains("Selenium WebDriver"));
