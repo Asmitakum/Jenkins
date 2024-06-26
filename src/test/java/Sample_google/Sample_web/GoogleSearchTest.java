@@ -21,13 +21,13 @@ public class GoogleSearchTest {
     }
 
     @Test
-    public void testGoogleSearch() {
+    public void testGoogleSearch() throws InterruptedException {
         driver.get("https://www.google.com");
 
         WebElement searchBox = driver.findElement(By.name("q"));
         searchBox.sendKeys("Selenium WebDriver");
         searchBox.submit();
-		thread.sleep(3000);
+		Thread.sleep(3000);
 
         String title = driver.getTitle();
         Assert.assertTrue(title.contains("Selenium WebDriver"));
